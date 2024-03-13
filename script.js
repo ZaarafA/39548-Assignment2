@@ -24,7 +24,14 @@ function addR() {
 
 // Add a column
 function addC() {
+    numCols++;
 
+    for(let i=0;i<rows.length;i++){
+        new_cell = document.createElement('td');
+        rows[i].appendChild(new_cell);
+    }
+
+    console.log("Clicked Add Col");
 }
 
 // Remove a row
