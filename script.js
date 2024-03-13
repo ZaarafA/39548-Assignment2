@@ -44,7 +44,11 @@ function removeR() {
 // Remove a column
 function removeC() {
     numCols--;
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    for(let i=0;i<rows.length;i++){
+        let cells = rows[i].querySelectorAll('td');
+        let last_cell = cells[cells.length-1];
+        last_cell.remove();
+    }
 }
 
 // Set global variable for selected color
