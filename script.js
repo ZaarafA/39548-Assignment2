@@ -37,7 +37,8 @@ function addC() {
 // Remove a row
 function removeR() {
     numRows--;
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    let last_row = rows[rows.length-1];
+    last_row.remove();
 }
 
 // Remove a column
