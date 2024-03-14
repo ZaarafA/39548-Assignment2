@@ -74,7 +74,10 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    console.log('Fill All selected')
+    Array.from(columns).forEach(cell => {
+        cell.style.backgroundColor = colorSelected;
+    })
 }
 
 // Clear all cells
