@@ -36,14 +36,21 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    numRows--;
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    numRows = (numRows - 1 < 0) ? 0 : (numRows - 1);
+    // remove the last row in the grid
+    let last_row = rows[rows.length-1];
+    last_row.remove();
 }
 
 // Remove a column
 function removeC() {
-    numCols--;
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    numCols = (numCols - 1 < 0) ? 0 : (numCols - 1);
+    // for each row, remove the last cell
+    for(let i=0;i<rows.length;i++){
+        let cells = rows[i].querySelectorAll('td');
+        let last_cell = cells[cells.length-1];
+        last_cell.remove();
+    }
 }
 
 // Set global variable for selected color
