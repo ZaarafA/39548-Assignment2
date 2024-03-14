@@ -6,12 +6,12 @@ let colorSelected;
 // DOM Selectors
 const grid = document.getElementById('grid');
 const rows = document.getElementsByTagName('tr')
-const columns = document.getElementsByTagName('td') // Collection of Cells
+const columns = document.getElementsByTagName('td') // Collection of All Cells
 
 
 // Add a row
-function addR() {
-    numRows++;
+function addR() {    
+    // create a new table row and add as many cells to it as there are columns
     let new_row = document.createElement('tr');
     for (let j=0;j<numCols;j++){
         let new_cell = document.createElement('td');
@@ -20,6 +20,7 @@ function addR() {
     }
     grid.appendChild(new_row);
 
+    numRows++;
     console.log("Clicked Add Row");
 }
 
@@ -27,11 +28,11 @@ function addR() {
 function addC() {
     numCols++;
 
-    for(let i=0;i<rows.length;i++){
+    Array.from(rows).forEach(e =>{
         new_cell = document.createElement('td');
         new_cell.style.backgroundColor = 'white';
-        rows[i].appendChild(new_cell);
-    }
+        e.appendChild(new_cell);
+    })
 
     console.log("Clicked Add Col");
 }
@@ -48,11 +49,12 @@ function removeR() {
 function removeC() {
     numCols = (numCols - 1 < 0) ? 0 : (numCols - 1);
     // for each row, remove the last cell
-    for(let i=0;i<rows.length;i++){
-        let cells = rows[i].querySelectorAll('td');
+    
+    Array.from(rows).forEach(row => {
+        let cells = row.querySelectorAll('td');
         let last_cell = cells[cells.length-1];
         last_cell.remove();
-    }
+    })
 }
 
 // Set global variable for selected color
@@ -74,10 +76,10 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    console.log('Fill All selected')
     Array.from(columns).forEach(cell => {
         cell.style.backgroundColor = colorSelected;
     })
+    console.log('Fill All selected')
 }
 
 // Clear all cells
