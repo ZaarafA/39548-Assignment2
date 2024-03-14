@@ -6,7 +6,7 @@ let colorSelected;
 // DOM Selectors
 const grid = document.getElementById('grid');
 const rows = document.getElementsByTagName('tr')
-const columns = document.getElementsByTagName('td')
+const columns = document.getElementsByTagName('td') // Collection of Cells
 
 
 // Add a row
@@ -62,7 +62,12 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    console.log('FillU selected')
+    Array.from(columns).forEach(cell => {
+        if((cell.style.backgroundColor.toLowerCase() == 'white')){
+            cell.style.backgroundColor = colorSelected;
+        }
+    })
 }
 
 // Fill all cells
