@@ -77,11 +77,6 @@ function clearAll(){
 grid.addEventListener('click', e => {
     console.log(e.target.tagName);
     if(e.target.tagName == 'TD'){
-        alert('td hit');
+        e.target.style.backgroundColor = colorSelected;
     }
 })
-
-// Color Cell on Click
-function colorCell(){
-
-}
