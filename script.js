@@ -56,6 +56,7 @@ function removeC() {
 // Set global variable for selected color
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
+    document.getElementById('color-display').style.backgroundColor = colorSelected;
     console.log(colorSelected);
 }
 
@@ -73,3 +74,10 @@ function fillAll(){
 function clearAll(){
     alert("Clicked Clear All"); // Replace this line with your code.
 }
+
+grid.addEventListener('click', e => {
+    console.log(e.target.tagName);
+    if(e.target.tagName == 'TD'){
+        e.target.style.backgroundColor = colorSelected;
+    }
+})

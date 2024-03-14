@@ -25,6 +25,9 @@ body {
     background-color: var(--dianne);
     border-radius: 10px;
     align-self: center;
+    display: flex;
+    gap: 7px;
+    align-items: center;
 }
 button, select{
     background-color: var(--damask);
@@ -35,6 +38,15 @@ button, select{
     letter-spacing: 1px;
     font-size: 14px;
     margin: 0 5px;
+}
+#color-display{
+    display: inline-block;
+    background-color: white;
+    width: 25px;
+    margin-left: 5px;
+    height: 25px;
+    border: 2px solid var(--mirage);
+    border-radius: 50%;
 }
 
 .tableContainer{
