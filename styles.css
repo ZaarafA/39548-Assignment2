@@ -45,7 +45,7 @@ button, select{
     width: 25px;
     margin-left: 5px;
     height: 25px;
-    border: 2px solid var(--damask);
+    border: 2px solid var(--mirage);
     border-radius: 50%;
 }
 

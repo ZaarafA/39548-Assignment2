@@ -56,6 +56,7 @@ function removeC() {
 // Set global variable for selected color
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
+    document.getElementById('color-display').style.backgroundColor = colorSelected;
     console.log(colorSelected);
 }
 
