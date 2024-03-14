@@ -82,9 +82,13 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    console.log('Clear Selected')
+    Array.from(columns).forEach(cell => {
+        cell.style.backgroundColor = 'white';
+    })
 }
 
+// Event Listener for Clicking on Cells
 grid.addEventListener('click', e => {
     console.log(e.target.tagName);
     if(e.target.tagName == 'TD'){
