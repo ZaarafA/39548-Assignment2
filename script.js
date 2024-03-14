@@ -73,3 +73,15 @@ function fillAll(){
 function clearAll(){
     alert("Clicked Clear All"); // Replace this line with your code.
 }
+
+grid.addEventListener('click', e => {
+    console.log(e.target.tagName);
+    if(e.target.tagName == 'TD'){
+        alert('td hit');
+    }
+})
+
+// Color Cell on Click
+function colorCell(){
+
+}
