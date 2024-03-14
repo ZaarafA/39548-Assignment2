@@ -6,7 +6,7 @@ let colorSelected;
 // DOM Selectors
 const grid = document.getElementById('grid');
 const rows = document.getElementsByTagName('tr')
-const columns = document.getElementsByTagName('td')
+const columns = document.getElementsByTagName('td') // Collection of Cells
 
 
 // Add a row
@@ -15,6 +15,7 @@ function addR() {
     let new_row = document.createElement('tr');
     for (let j=0;j<numCols;j++){
         let new_cell = document.createElement('td');
+        new_cell.style.backgroundColor = 'white';
         new_row.appendChild(new_cell)
     }
     grid.appendChild(new_row);
@@ -28,6 +29,7 @@ function addC() {
 
     for(let i=0;i<rows.length;i++){
         new_cell = document.createElement('td');
+        new_cell.style.backgroundColor = 'white';
         rows[i].appendChild(new_cell);
     }
 
@@ -62,19 +64,31 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    console.log('FillU selected')
+    Array.from(columns).forEach(cell => {
+        if((cell.style.backgroundColor.toLowerCase() == 'white')){
+            cell.style.backgroundColor = colorSelected;
+        }
+    })
 }
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    console.log('Fill All selected')
+    Array.from(columns).forEach(cell => {
+        cell.style.backgroundColor = colorSelected;
+    })
 }
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    console.log('Clear Selected')
+    Array.from(columns).forEach(cell => {
+        cell.style.backgroundColor = 'white';
+    })
 }
 
+// Event Listener for Clicking on Cells
 grid.addEventListener('click', e => {
     console.log(e.target.tagName);
     if(e.target.tagName == 'TD'){
