@@ -15,6 +15,7 @@ function addR() {
     let new_row = document.createElement('tr');
     for (let j=0;j<numCols;j++){
         let new_cell = document.createElement('td');
+        new_cell.style.backgroundColor = 'white';
         new_row.appendChild(new_cell)
     }
     grid.appendChild(new_row);
@@ -28,6 +29,7 @@ function addC() {
 
     for(let i=0;i<rows.length;i++){
         new_cell = document.createElement('td');
+        new_cell.style.backgroundColor = 'white';
         rows[i].appendChild(new_cell);
     }
 
