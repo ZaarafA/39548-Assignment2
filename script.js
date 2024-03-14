@@ -95,3 +95,18 @@ grid.addEventListener('click', e => {
         e.target.style.backgroundColor = colorSelected;
     }
 })
+
+// open a color selection dialog
+function openColorSelector(){
+    // create color input element
+    const colorInput = document.createElement('input');
+    colorInput.type = 'color';
+
+    // set color to input value
+    colorInput.addEventListener('input', e=>{
+        colorSelected = e.target.value;
+        document.getElementById('color-display').style.backgroundColor = colorSelected;
+    })
+
+    colorInput.click();
+}
